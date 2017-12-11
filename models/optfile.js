@@ -25,9 +25,10 @@ module.exports = {
             recall('异步文件被保存')
         })
     },
-    writeFileSync: (path, data)=>{
+    writeFileSync: (path, data,recall)=>{
         fs.writeFileSync(path,data)
         console.log('同步文件被保存');
+        recall('同步文件被保存')
     }
 
 }
