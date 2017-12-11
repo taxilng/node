@@ -11,7 +11,7 @@ module.exports = {
                 console.log(err);
             }else{
                 console.log(data.toString());
-                recall(data)
+                recall(data.toString())
             }
         })
         console.log('异步方法执行完毕');
