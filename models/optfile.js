@@ -15,5 +15,28 @@ module.exports = {
             }
         })
         console.log('异步方法执行完毕');
+    },
+    writeFile: (path, data,recall)=>{
+        fs.writeFile(path,data, (err)=>{
+            if(err){
+                throw err;
+            }
+            console.log('异步文件被保存');
+            recall('异步文件被保存')
+        })
+    },
+    writeFileSync: (path, data)=>{
+        fs.writeFileSync(path,data)
+        console.log('同步文件被保存');
     }
+
 }
+
+
+
+// function f1() {
+//     var a = 1;
+//     return a;
+// }
+// var b = f1();
+// console.log(b);
