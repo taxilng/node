@@ -11,7 +11,7 @@ module.exports = {
                 console.log('bbbb'+err);
                 recall('文件不存在')
             }else{
-                console.log(data.toString());
+                // console.log(data.toString());
                 recall(data.toString())
             }
         })
