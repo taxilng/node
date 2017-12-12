@@ -1,25 +1,58 @@
-const http = require('http')
-const url = require('url')
-const router = require('./models/router')
-const exception = require('./models/exception')
-let i = 0;
-http.createServer((req, res)=>{
-    if(req.url !== '/favicon.ico'){ //清除第二次访问
-        const pathname = url.parse(req.url).pathname.replace(/\//,'')
-        console.log(pathname);
-        try{
-            router[pathname](req, res)
-           // const data = exception.expfun(1)
-           //  res.writeHead(200, {'Content-Type':'text/html; charset=utf-8'})
-           //  res.write('成功'+data)
-           //  res.end()
-        }catch (err){
-            console.log('报错' + err);
-            res.writeHead(200, {'Content-Type':'text/html; charset=utf-8'})
-            res.write('报错' + err)
-            res.end()
+const async = require('async')
+function f1() {
+    let i = 0
+    const timer = setInterval(() => {
+        console.log("aaa" + new Date());
+        i++;
+        if (i == 3) {
+            clearInterval(timer)
         }
-        console.log('主程序执行完毕'+i++);
-    }
-}).listen(8000)
-console.log('server running');
+    }, 1000)
+    console.log("f1执行完毕");
+}
+function f2() {
+    let i = 0
+    const timer = setInterval(() => {
+        console.log("bbb" + new Date());
+        i++;
+        if (i == 3) {
+            clearInterval(timer)
+        }
+    }, 1000)
+    console.log("f2执行完毕");
+}
+
+// f1()
+// f2()
+function exec() {
+    // async.series({//串行无关联
+    // async.parallel({ //并行
+    async.waterfall([ //串行有关联
+         (done)=> {
+            let i = 0
+            const timer = setInterval(() => {
+                console.log("one" + new Date());
+                i++;
+                if (i == 3) {
+                    clearInterval(timer)
+                    done(null,'one完毕')
+                }
+            }, 1000)
+        },
+        (preValue,done)=>{
+            let i = 0
+            const timer = setInterval(() => {
+                console.log("two"+preValue + new Date());
+                i++;
+                if (i == 3) {
+                    clearInterval(timer)
+                    done(null,preValue+'two完毕')
+                }
+            }, 1000)
+        }],(err,rs)=> {
+            console.log(err);
+            console.log(rs);
+        }
+)
+}
+exec()
