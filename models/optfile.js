@@ -8,7 +8,8 @@ module.exports = {
     readFile: (path, recall)=>{
         fs.readFile(path,(err, data)=>{
             if(err){
-                console.log(err);
+                console.log('bbbb'+err);
+                recall('文件不存在')
             }else{
                 console.log(data.toString());
                 recall(data.toString())
@@ -29,15 +30,20 @@ module.exports = {
         fs.writeFileSync(path,data)
         console.log('同步文件被保存');
         recall('同步文件被保存')
+    },
+    readImg: (path, res)=>{
+        fs.readFile(path,'binary',(err, file)=>{
+            if(err){
+                throw err
+            }else{
+                console.log('输出文件');
+                res.write(file,'binary')
+                res.end()
+            }
+        })
     }
 
 }
 
 
 
-// function f1() {
-//     var a = 1;
-//     return a;
-// }
-// var b = f1();
-// console.log(b);
