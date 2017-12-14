@@ -1,4 +1,6 @@
 define(function (require, exports, module) {
+    var $ = require('jquery')
+    console.log($);
     var obj = require('./power')
     module.exports = {
         add: function (a,b) {

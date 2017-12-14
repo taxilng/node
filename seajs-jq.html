@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    hellow world
+</div>
+<script src="script/sea-debug.js"></script>
+<script>
+    seajs.config({
+        base:'./module',
+        alias: {
+            jquery: 'jquery-1.10.0'
+        }
+    })
+    seajs.use('main')
+</script>
+</body>
+</html>
