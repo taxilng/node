@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>一</li>
+    <li>而</li>
+    <li>三</li>
+    <li>死</li>
+    <li>吴</li>
+</ul>
+<script>
+    var list = document.querySelectorAll("ul li")
+    for(var i = 0;i< list.length; i++){
+         (function (i) {
+             list[i].onclick = function () {
+                console.log(i);
+            }
+        })(i)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="script/axios.js"></script>
+<script>
+    axios.get('https://cnodejs.org/api/v1/topic/58eee565a92d341e48cfe7fc').then((res)=>{
+        return res.data.data.author.loginname
+    }).then((res)=>{
+        console.log(res);
+      return  axios.get('https://cnodejs.org/api/v1/user/' + res)
+    }).then((res)=>{
+        console.log(res);
+    })
+</script>
+</body>
+</html>
