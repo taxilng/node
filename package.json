@@ -8,6 +8,7 @@
   "dependencies": {
     "_async@2.6.0@async": "^2.6.0",
     "_lodash@4.17.4@lodash": "^4.17.4",
+    "iconv-lite": "^0.4.19",
     "lodash": "^4.17.4",
     "seajs-seajs-d9056fb": "^3.0.2"
   },
