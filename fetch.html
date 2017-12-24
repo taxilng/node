@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    async function f1() {
+        try {
+            let response = await fetch('https://cnodejs.org/api/v1/topic/58eee565a92d341e48cfe7fc');
+            let data = await response.json();
+            console.log(data);
+        } catch(e) {
+            console.log("Oops, error", e);
+        }
+    }
+    f1()
+</script>
+</body>
+</html>

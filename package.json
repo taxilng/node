@@ -8,8 +8,11 @@
   "dependencies": {
     "_async@2.6.0@async": "^2.6.0",
     "_lodash@4.17.4@lodash": "^4.17.4",
+    "connect-history-api-fallback": "^1.5.0",
+    "express": "^4.16.2",
     "iconv-lite": "^0.4.19",
     "lodash": "^4.17.4",
+    "mysql": "^2.15.0",
     "seajs-seajs-d9056fb": "^3.0.2"
   },
   "scripts": {

@@ -3,5 +3,5 @@
 // buffer.write('中国')
 // console.log(buffer);
 
-const buffer = new Buffer("中国")
+const buffer = new Buffer("中国人啊水水水水水水好不好啊")
 console.log(buffer);
