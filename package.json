@@ -12,7 +12,9 @@
     "express": "^4.16.2",
     "iconv-lite": "^0.4.19",
     "lodash": "^4.17.4",
+    "multer": "^1.3.0",
     "mysql": "^2.15.0",
+    "orm": "^4.0.2",
     "seajs-seajs-d9056fb": "^3.0.2"
   },
   "scripts": {
